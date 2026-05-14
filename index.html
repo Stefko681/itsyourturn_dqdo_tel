@@ -1,18 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>macOS Simulator</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div id="desktop">
         <!-- Menu Bar -->
         <nav id="menu-bar">
             <div class="menu-left">
-                <a href="#" class="apple-logo"><svg viewBox="0 0 170 170" width="14" height="14" fill="currentColor"><path d="M150.37,130.25c-2.45,5.66-5.35,10.87-8.71,15.66-4.58,6.53-8.33,11.05-11.22,13.56-4.48,4.12-9.28,6.23-14.42,6.35-3.69,0-8.14-1.05-13.32-3.18-5.2-2.12-9.97-3.18-14.41-3.18-4.58,0-9.5,1.05-14.79,3.18-5.29,2.13-9.67,3.24-13.14,3.36-5.37,0-10.4-2.27-15.08-6.84-2.81-2.58-6.66-7.25-11.55-14.02-6.52-9.28-11.83-19.8-15.93-31.57-4.1-11.75-6.15-22.95-6.15-33.58,0-13.23,3.31-23.77,9.92-31.62,4.6-5.46,10.15-9.45,16.63-11.96,6.48-2.52,12.98-3.76,19.51-3.72,5.2,0,10.96,1.45,17.27,4.36,6.32,2.9,10.49,4.36,12.51,4.36,2.39,0,6.67-1.48,12.83-4.45,6.17-2.96,11.85-4.42,17.06-4.36,9.39,0,17.47,2.83,24.23,8.48-6.66,4.02-10,9.92-10.02,17.68,0,7.1,2.8,13.12,8.41,18.06,2.5,2.15,5.4,3.87,8.71,5.16-2.13,6.23-4.43,11.72-6.89,16.48zm-33.34-106.63c-3.14,3.78-7.23,6.15-12.27,7.13-0.54-5.25,1.38-10.36,5.75-15.34,3.06-3.48,6.86-5.83,11.41-7.05,0.61,4.96-1.75,10.43-4.89,15.26z"/></svg></a>
-                <a href="#" class="active fw-bold">Finder</a>
+                <div style="position: relative; height: 100%;">
+                    <a href="#" class="apple-logo" id="apple-menu-trigger" onclick="toggleMenu('apple-menu', event)">
+                        <svg viewBox="0 0 170 170" width="14" height="14" fill="currentColor">
+                            <path
+                                d="M150.37,130.25c-2.45,5.66-5.35,10.87-8.71,15.66-4.58,6.53-8.33,11.05-11.22,13.56-4.48,4.12-9.28,6.23-14.42,6.35-3.69,0-8.14-1.05-13.32-3.18-5.2-2.12-9.97-3.18-14.41-3.18-4.58,0-9.5,1.05-14.79,3.18-5.29,2.13-9.67,3.24-13.14,3.36-5.37,0-10.4-2.27-15.08-6.84-2.81-2.58-6.66-7.25-11.55-14.02-6.52-9.28-11.83-19.8-15.93-31.57-4.1-11.75-6.15-22.95-6.15-33.58,0-13.23,3.31-23.77,9.92-31.62,4.6-5.46,10.15-9.45,16.63-11.96,6.48-2.52,12.98-3.76,19.51-3.72,5.2,0,10.96,1.45,17.27,4.36,6.32,2.9,10.49,4.36,12.51,4.36,2.39,0,6.67-1.48,12.83-4.45,6.17-2.96,11.85-4.42,17.06-4.36,9.39,0,17.47,2.83,24.23,8.48-6.66,4.02-10,9.92-10.02,17.68,0,7.1,2.8,13.12,8.41,18.06,2.5,2.15,5.4,3.87,8.71,5.16-2.13,6.23-4.43,11.72-6.89,16.48zm-33.34-106.63c-3.14,3.78-7.23,6.15-12.27,7.13-0.54-5.25,1.38-10.36,5.75-15.34,3.06-3.48,6.86-5.83,11.41-7.05,0.61,4.96-1.75,10.43-4.89,15.26z" />
+                        </svg>
+                    </a>
+                    <div id="apple-menu" class="dropdown-menu">
+                        <div class="dropdown-item">About This Mac</div>
+                        <div class="dropdown-divider"></div>
+                        <div class="dropdown-item">System Settings...</div>
+                        <div class="dropdown-item">App Store... <span class="shortcut">5 updates</span></div>
+                        <div class="dropdown-divider"></div>
+                        <div class="dropdown-item">Recent Items</div>
+                        <div class="dropdown-divider"></div>
+                        <div class="dropdown-item">Force Quit... <span class="shortcut">⌥⌘⎋</span></div>
+                        <div class="dropdown-divider"></div>
+                        <div class="dropdown-item">Sleep</div>
+                        <div class="dropdown-item">Restart...</div>
+                        <div class="dropdown-item">Shut Down...</div>
+                        <div class="dropdown-divider"></div>
+                        <div class="dropdown-item">Lock Screen <span class="shortcut">⌃⌘Q</span></div>
+                        <div class="dropdown-item">Log Out User... <span class="shortcut">⇧⌘Q</span></div>
+                    </div>
+                </div>
+
+                <div style="position: relative; height: 100%;">
+                    <a href="#" class="active fw-bold" onclick="toggleMenu('finder-menu', event)">Finder</a>
+                    <div id="finder-menu" class="dropdown-menu">
+                        <div class="dropdown-item">About Finder</div>
+                        <div class="dropdown-divider"></div>
+                        <div class="dropdown-item">Settings... <span class="shortcut">⌘,</span></div>
+                        <div class="dropdown-divider"></div>
+                        <div class="dropdown-item">Empty Trash... <span class="shortcut">⇧⌘⌫</span></div>
+                        <div class="dropdown-divider"></div>
+                        <div class="dropdown-item">Services</div>
+                        <div class="dropdown-divider"></div>
+                        <div class="dropdown-item">Hide Finder <span class="shortcut">⌘H</span></div>
+                        <div class="dropdown-item">Hide Others <span class="shortcut">⌥⌘H</span></div>
+                        <div class="dropdown-item">Show All</div>
+                    </div>
+                </div>
+
                 <a href="#">File</a>
                 <a href="#">Edit</a>
                 <a href="#">View</a>
@@ -21,79 +64,172 @@
                 <a href="#">Help</a>
             </div>
             <div class="menu-right">
-                <a href="#" class="icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon></svg></a>
-                <a href="#" class="icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14.08 0"></path><path d="M1.42 9a16 16 0 0 1 21.16 0"></path><path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path><line x1="12" y1="20" x2="12.01" y2="20"></line></svg></a>
-                <a href="#" class="icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg></a>
-                <a href="#" class="icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect><line x1="4" y1="12" x2="20" y2="12"></line><line x1="12" y1="4" x2="12" y2="20"></line></svg></a>
+                <div style="position: relative; height: 100%;">
+                    <a href="#" class="icon" onclick="toggleMenu('battery-menu', event)">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
+                        </svg>
+                    </a>
+                    <div id="battery-menu" class="dropdown-menu" style="right: 0; left: auto;">
+                        <div class="dropdown-item" style="font-weight: 600;">Battery</div>
+                        <div class="dropdown-item">Power Source: Battery</div>
+                        <div class="dropdown-item">Percentage: 84%</div>
+                        <div class="dropdown-divider"></div>
+                        <div class="dropdown-item">Battery Settings...</div>
+                    </div>
+                </div>
+
+                <div style="position: relative; height: 100%;">
+                    <a href="#" class="icon" onclick="toggleMenu('wifi-menu', event)">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12.55a11 11 0 0 1 14.08 0"></path>
+                            <path d="M1.42 9a16 16 0 0 1 21.16 0"></path>
+                            <path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path>
+                            <line x1="12" y1="20" x2="12.01" y2="20"></line>
+                        </svg>
+                    </a>
+                    <div id="wifi-menu" class="dropdown-menu" style="right: 0; left: auto;">
+                        <div class="dropdown-item" style="font-weight: 600;">Wi-Fi</div>
+                        <div class="dropdown-item">Wi-Fi: On</div>
+                        <div class="dropdown-divider"></div>
+                        <div class="dropdown-item">Home_Network <span class="shortcut">🔒</span></div>
+                        <div class="dropdown-item">Guest_Network <span class="shortcut">🔒</span></div>
+                        <div class="dropdown-divider"></div>
+                        <div class="dropdown-item">Wi-Fi Settings...</div>
+                    </div>
+                </div>
+
+                <a href="#" class="icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                        <path
+                            d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" />
+                    </svg></a>
+                
+                <div style="position: relative; height: 100%;">
+                    <a href="#" class="icon" onclick="toggleMenu('control-center', event)">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect>
+                            <line x1="4" y1="12" x2="20" y2="12"></line>
+                            <line x1="12" y1="4" x2="12" y2="20"></line>
+                        </svg>
+                    </a>
+                    <div id="control-center" class="dropdown-menu" style="right: 0; left: auto; min-width: 300px; padding: 15px;">
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                            <div style="background: rgba(255,255,255,0.5); padding: 10px; border-radius: 12px; display: flex; align-items: center; gap: 10px;">
+                                <div style="width: 30px; height: 30px; background: #007aff; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff;">📶</div>
+                                <div>
+                                    <div style="font-size: 12px; font-weight: 600;">Wi-Fi</div>
+                                    <div style="font-size: 10px; opacity: 0.6;">Home_Net</div>
+                                </div>
+                            </div>
+                            <div style="background: rgba(255,255,255,0.5); padding: 10px; border-radius: 12px; display: flex; align-items: center; gap: 10px;">
+                                <div style="width: 30px; height: 30px; background: #007aff; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff;">🦷</div>
+                                <div>
+                                    <div style="font-size: 12px; font-weight: 600;">Bluetooth</div>
+                                    <div style="font-size: 10px; opacity: 0.6;">On</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="margin-top: 15px; background: rgba(255,255,255,0.5); padding: 10px; border-radius: 12px;">
+                            <div style="font-size: 12px; font-weight: 600; margin-bottom: 5px;">Display</div>
+                            <input type="range" style="width: 100%;">
+                        </div>
+                        <div style="margin-top: 10px; background: rgba(255,255,255,0.5); padding: 10px; border-radius: 12px;">
+                            <div style="font-size: 12px; font-weight: 600; margin-bottom: 5px;">Sound</div>
+                            <input type="range" style="width: 100%;">
+                        </div>
+                    </div>
+                </div>
+
                 <a href="#" class="time" id="clock">Tue Apr 1 9:41 AM</a>
             </div>
         </nav>
 
+        <!-- Windows Container -->
+        <div id="window-container"></div>
+
         <!-- Dock -->
         <div id="dock-container">
             <div class="dock">
-                <div class="dock-icon">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c9/Finder_Icon_macOS_Big_Sur.png" alt="Finder">
+                <div class="dock-icon" onclick="openApp('finder')">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Finder_Icon_macOS_Big_Sur.png/250px-Finder_Icon_macOS_Big_Sur.png"
+                        alt="Finder">
                     <div class="dot active"></div>
                 </div>
-                <div class="dock-icon">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/d/dd/Launchpad_Icon_macOS_Big_Sur.png" alt="Launchpad">
+                <div class="dock-icon" onclick="openApp('launchpad')">
+                    <img src="https://upload.wikimedia.org/wikipedia/it/5/57/Icona_Launchpad.png" alt="Launchpad">
                 </div>
-                <div class="dock-icon">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/52/Safari_browser_logo.svg" alt="Safari">
+                <div class="dock-icon" onclick="openApp('safari')">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/7/71/Safari_Liquid_Glass_icon.png" alt="Safari">
                 </div>
-                <div class="dock-icon">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/IMessage_logo.svg" alt="Messages">
+                <div class="dock-icon" onclick="openApp('messages')">
+                    <img src="https://help.apple.com/assets/694059163A98DA7C77096BB3/6940591877CC4A95400B60E4/en_GB/aa2633c8fb2814decdff5ee6b4dde94e.png"
+                        alt="Messages">
                 </div>
-                <div class="dock-icon">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Mail_%28Apple%29.svg" alt="Mail">
+                <div class="dock-icon" onclick="openApp('mail')">
+                    <img src="https://help.apple.com/assets/6940590395B73B67500DF914/69405904627DAC39E4013406/en_US/610a7e660092193773855879a591dc48.png"
+                        alt="Mail">
                 </div>
-                <div class="dock-icon">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/cb/Apple_Maps_Icon_%282020%29.svg" alt="Maps">
+                <div class="dock-icon" onclick="openApp('maps')">
+                    <img src="https://help.apple.com/assets/6940590D627DAC39E4013417/6940590E0C0C2E9AA6030528/en_US/0cb1025a905b01f8e1e50e4288ff3e95.png"
+                        alt="Maps">
                 </div>
-                <div class="dock-icon">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/f/f1/Apple_Photos_icon.svg" alt="Photos">
+                <div class="dock-icon" onclick="openApp('photos')">
+                    <img src="https://help.apple.com/assets/68CC87B9CAAD76736901E52B/68CC87BBC2E039F703036A8A/en_US/d1c53b6b8d4bae14b946fa9a54794550.png"
+                        alt="Photos">
                 </div>
-                <div class="dock-icon">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/8/86/FaceTime_Icon_macOS_Big_Sur.png" alt="FaceTime">
+                <div class="dock-icon" onclick="openApp('facetime')">
+                    <img src="https://help.apple.com/assets/6940569A1F6143F21904FAD1/6940569BF6CF4E307E0EFE36/en_US/210ef7a0ac83cebeeb19dc7a9d1bb0e1.png"
+                        alt="FaceTime">
                 </div>
-                <div class="dock-icon">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c5/Apple_Calendar_Icon_%282020%29.svg" alt="Calendar">
+                <div class="dock-icon" onclick="openApp('calendar')">
+                    <img src="https://help.apple.com/assets/67DB4AD617009A1F970697F4/67DB4AD747D53316F70BB655/en_US/9c6fd1cb730164c989d1b3afab213fad.png"
+                        alt="Calendar">
                 </div>
-                <div class="dock-icon">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/1/1a/Apple_Contacts_Icon_%282020%29.svg" alt="Contacts">
+                <div class="dock-icon" onclick="openApp('contacts')">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Contacts_%28iOS%29.png/250px-Contacts_%28iOS%29.png"
+                        alt="Contacts">
                 </div>
-                <div class="dock-icon">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/3/36/Apple_Reminders_Icon_%282020%29.svg" alt="Reminders">
+                <div class="dock-icon" onclick="openApp('reminders')">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Reminders_%28macOS%29.png/250px-Reminders_%28macOS%29.png"
+                        alt="Reminders">
                 </div>
-                <div class="dock-icon">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/8/8e/Apple_Notes_Icon_%282020%29.svg" alt="Notes">
+                <div class="dock-icon" onclick="openApp('notes')">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Apple_Notes_%28macOS_Big_Sur%29.png"
+                        alt="Notes">
                 </div>
-                <div class="dock-icon">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/90/Apple_TV_app_logo.svg" alt="TV">
+                <div class="dock-icon" onclick="openApp('tv')">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/TV_%28macOS%29.png/250px-TV_%28macOS%29.png"
+                        alt="TV">
                 </div>
-                <div class="dock-icon">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5f/Apple_Music_icon.svg" alt="Music">
+                <div class="dock-icon" onclick="openApp('music')">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6f/AppleMusicIcon_macOS%402x.png"
+                        alt="Music">
                 </div>
-                <div class="dock-icon">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Podcasts_%28iOS%29.svg" alt="Podcasts">
+                <div class="dock-icon" onclick="openApp('podcasts')">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/f/f7/Podcasts_%28macOS%29.png"
+                        alt="Podcasts">
                 </div>
-                <div class="dock-icon">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/67/App_Store_%28iOS%29.svg" alt="App Store">
+                <div class="dock-icon" onclick="openApp('appstore')">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/Mac_App_Store_logo.png"
+                        alt="App Store">
                 </div>
-                <div class="dock-icon">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/25/System_Preferences_icon.png" alt="System Settings">
+                <div class="dock-icon" onclick="openApp('settings')">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/2/23/System_Preferences_icon.png"
+                        alt="System Settings">
                 </div>
                 <div class="dock-divider"></div>
-                <div class="dock-icon">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Folder_Mac.svg/1024px-Folder_Mac.svg.png" alt="Downloads">
+                <div class="dock-icon" onclick="openApp('downloads')">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/d/d6/Files_App_icon_iOS.png"
+                        alt="Downloads">
                 </div>
-                <div class="dock-icon">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Trash_Icon_macOS_Big_Sur.png" alt="Trash">
+                <div class="dock-icon" onclick="openApp('trash')">
+                    <img src="https://files.softicons.com/download/system-icons/mac-os-apps-icons-3-by-hamza-saleem/png/512x512/Trash.png"
+                        alt="Trash">
                 </div>
             </div>
         </div>
     </div>
     <script src="script.js"></script>
 </body>
+
 </html>
