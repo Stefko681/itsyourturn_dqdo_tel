@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>macOS Simulator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="desktop">
+        <!-- Menu Bar -->
+        <nav id="menu-bar">
+            <div class="menu-left">
+                <a href="#" class="apple-logo"><svg viewBox="0 0 170 170" width="14" height="14" fill="currentColor"><path d="M150.37,130.25c-2.45,5.66-5.35,10.87-8.71,15.66-4.58,6.53-8.33,11.05-11.22,13.56-4.48,4.12-9.28,6.23-14.42,6.35-3.69,0-8.14-1.05-13.32-3.18-5.2-2.12-9.97-3.18-14.41-3.18-4.58,0-9.5,1.05-14.79,3.18-5.29,2.13-9.67,3.24-13.14,3.36-5.37,0-10.4-2.27-15.08-6.84-2.81-2.58-6.66-7.25-11.55-14.02-6.52-9.28-11.83-19.8-15.93-31.57-4.1-11.75-6.15-22.95-6.15-33.58,0-13.23,3.31-23.77,9.92-31.62,4.6-5.46,10.15-9.45,16.63-11.96,6.48-2.52,12.98-3.76,19.51-3.72,5.2,0,10.96,1.45,17.27,4.36,6.32,2.9,10.49,4.36,12.51,4.36,2.39,0,6.67-1.48,12.83-4.45,6.17-2.96,11.85-4.42,17.06-4.36,9.39,0,17.47,2.83,24.23,8.48-6.66,4.02-10,9.92-10.02,17.68,0,7.1,2.8,13.12,8.41,18.06,2.5,2.15,5.4,3.87,8.71,5.16-2.13,6.23-4.43,11.72-6.89,16.48zm-33.34-106.63c-3.14,3.78-7.23,6.15-12.27,7.13-0.54-5.25,1.38-10.36,5.75-15.34,3.06-3.48,6.86-5.83,11.41-7.05,0.61,4.96-1.75,10.43-4.89,15.26z"/></svg></a>
+                <a href="#" class="active fw-bold">Finder</a>
+                <a href="#">File</a>
+                <a href="#">Edit</a>
+                <a href="#">View</a>
+                <a href="#">Go</a>
+                <a href="#">Window</a>
+                <a href="#">Help</a>
+            </div>
+            <div class="menu-right">
+                <a href="#" class="icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon></svg></a>
+                <a href="#" class="icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14.08 0"></path><path d="M1.42 9a16 16 0 0 1 21.16 0"></path><path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path><line x1="12" y1="20" x2="12.01" y2="20"></line></svg></a>
+                <a href="#" class="icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg></a>
+                <a href="#" class="icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect><line x1="4" y1="12" x2="20" y2="12"></line><line x1="12" y1="4" x2="12" y2="20"></line></svg></a>
+                <a href="#" class="time" id="clock">Tue Apr 1 9:41 AM</a>
+            </div>
+        </nav>
+
+        <!-- Dock -->
+        <div id="dock-container">
+            <div class="dock">
+                <div class="dock-icon">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c9/Finder_Icon_macOS_Big_Sur.png" alt="Finder">
+                    <div class="dot active"></div>
+                </div>
+                <div class="dock-icon">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/d/dd/Launchpad_Icon_macOS_Big_Sur.png" alt="Launchpad">
+                </div>
+                <div class="dock-icon">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/52/Safari_browser_logo.svg" alt="Safari">
+                </div>
+                <div class="dock-icon">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/IMessage_logo.svg" alt="Messages">
+                </div>
+                <div class="dock-icon">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Mail_%28Apple%29.svg" alt="Mail">
+                </div>
+                <div class="dock-icon">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/cb/Apple_Maps_Icon_%282020%29.svg" alt="Maps">
+                </div>
+                <div class="dock-icon">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/f/f1/Apple_Photos_icon.svg" alt="Photos">
+                </div>
+                <div class="dock-icon">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/8/86/FaceTime_Icon_macOS_Big_Sur.png" alt="FaceTime">
+                </div>
+                <div class="dock-icon">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c5/Apple_Calendar_Icon_%282020%29.svg" alt="Calendar">
+                </div>
+                <div class="dock-icon">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/1/1a/Apple_Contacts_Icon_%282020%29.svg" alt="Contacts">
+                </div>
+                <div class="dock-icon">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/3/36/Apple_Reminders_Icon_%282020%29.svg" alt="Reminders">
+                </div>
+                <div class="dock-icon">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/8/8e/Apple_Notes_Icon_%282020%29.svg" alt="Notes">
+                </div>
+                <div class="dock-icon">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/90/Apple_TV_app_logo.svg" alt="TV">
+                </div>
+                <div class="dock-icon">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5f/Apple_Music_icon.svg" alt="Music">
+                </div>
+                <div class="dock-icon">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Podcasts_%28iOS%29.svg" alt="Podcasts">
+                </div>
+                <div class="dock-icon">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/67/App_Store_%28iOS%29.svg" alt="App Store">
+                </div>
+                <div class="dock-icon">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/25/System_Preferences_icon.png" alt="System Settings">
+                </div>
+                <div class="dock-divider"></div>
+                <div class="dock-icon">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Folder_Mac.svg/1024px-Folder_Mac.svg.png" alt="Downloads">
+                </div>
+                <div class="dock-icon">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Trash_Icon_macOS_Big_Sur.png" alt="Trash">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
