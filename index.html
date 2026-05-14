@@ -66,7 +66,8 @@
             <div class="menu-right">
                 <div style="position: relative; height: 100%;">
                     <a href="#" class="icon" onclick="toggleMenu('battery-menu', event)">
-                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
                         </svg>
                     </a>
@@ -81,7 +82,8 @@
 
                 <div style="position: relative; height: 100%;">
                     <a href="#" class="icon" onclick="toggleMenu('wifi-menu', event)">
-                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M5 12.55a11 11 0 0 1 14.08 0"></path>
                             <path d="M1.42 9a16 16 0 0 1 21.16 0"></path>
                             <path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path>
@@ -103,37 +105,47 @@
                         <path
                             d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" />
                     </svg></a>
-                
+
                 <div style="position: relative; height: 100%;">
                     <a href="#" class="icon" onclick="toggleMenu('control-center', event)">
-                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect>
                             <line x1="4" y1="12" x2="20" y2="12"></line>
                             <line x1="12" y1="4" x2="12" y2="20"></line>
                         </svg>
                     </a>
-                    <div id="control-center" class="dropdown-menu" style="right: 0; left: auto; min-width: 300px; padding: 15px;">
+                    <div id="control-center" class="dropdown-menu"
+                        style="right: 0; left: auto; min-width: 300px; padding: 15px;">
                         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
-                            <div style="background: rgba(255,255,255,0.5); padding: 10px; border-radius: 12px; display: flex; align-items: center; gap: 10px;">
-                                <div style="width: 30px; height: 30px; background: #007aff; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff;">📶</div>
+                            <div
+                                style="background: rgba(255,255,255,0.5); padding: 10px; border-radius: 12px; display: flex; align-items: center; gap: 10px;">
+                                <div
+                                    style="width: 30px; height: 30px; background: #007aff; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff;">
+                                    📶</div>
                                 <div>
                                     <div style="font-size: 12px; font-weight: 600;">Wi-Fi</div>
                                     <div style="font-size: 10px; opacity: 0.6;">Home_Net</div>
                                 </div>
                             </div>
-                            <div style="background: rgba(255,255,255,0.5); padding: 10px; border-radius: 12px; display: flex; align-items: center; gap: 10px;">
-                                <div style="width: 30px; height: 30px; background: #007aff; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff;">🦷</div>
+                            <div
+                                style="background: rgba(255,255,255,0.5); padding: 10px; border-radius: 12px; display: flex; align-items: center; gap: 10px;">
+                                <div
+                                    style="width: 30px; height: 30px; background: #007aff; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff;">
+                                    🦷</div>
                                 <div>
                                     <div style="font-size: 12px; font-weight: 600;">Bluetooth</div>
                                     <div style="font-size: 10px; opacity: 0.6;">On</div>
                                 </div>
                             </div>
                         </div>
-                        <div style="margin-top: 15px; background: rgba(255,255,255,0.5); padding: 10px; border-radius: 12px;">
+                        <div
+                            style="margin-top: 15px; background: rgba(255,255,255,0.5); padding: 10px; border-radius: 12px;">
                             <div style="font-size: 12px; font-weight: 600; margin-bottom: 5px;">Display</div>
                             <input type="range" style="width: 100%;">
                         </div>
-                        <div style="margin-top: 10px; background: rgba(255,255,255,0.5); padding: 10px; border-radius: 12px;">
+                        <div
+                            style="margin-top: 10px; background: rgba(255,255,255,0.5); padding: 10px; border-radius: 12px;">
                             <div style="font-size: 12px; font-weight: 600; margin-bottom: 5px;">Sound</div>
                             <input type="range" style="width: 100%;">
                         </div>
@@ -153,7 +165,6 @@
                 <div class="dock-icon" onclick="openApp('finder')">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Finder_Icon_macOS_Big_Sur.png/250px-Finder_Icon_macOS_Big_Sur.png"
                         alt="Finder">
-                    <div class="dot active"></div>
                 </div>
                 <div class="dock-icon" onclick="openApp('launchpad')">
                     <img src="https://upload.wikimedia.org/wikipedia/it/5/57/Icona_Launchpad.png" alt="Launchpad">
